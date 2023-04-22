@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="./main.css" rel="stylesheet">
+  </link>
+  <link href="./controlButtons.css" rel="stylesheet">
+  </link>
+  <link href="./progress.css" rel="stylesheet">
+  </link>
+  <link href="../css/snackbar.css" rel="stylesheet">
+  </link>
+  <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+  </link>
+  <title>Control Panel</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="banner">
+
+      <div class="logo">
+
+      </div>
+      <div class="organisation">
+        Vegapod Hyperloop
+      </div>
+
+    </div>
+
+    <div class="viewSection">
+      <div class="all_tables">
+
+
+        <div class="tables_group_1_2_container">
+          <div class="tables_group_1">
+            <table>
+              <tr class="headerRow">
+                <td>
+                  <div>
+                    Battery Management System
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Property
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    Value
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Voltage
+                  </div>
+                </td>
+                <td>
+                  <div id="bms_voltage">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Current
+                  </div>
+                </td>
+                <td>
+                  <div id="bms_current">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Avg. Cell Voltage
+                  </div>
+                </td>
+                <td>
+                  <div id="bms_avg_cell_voltage">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Max. Cell Voltage
+                  </div>
+                </td>
+                <td>
+                  <div id="bms_max_cell_voltage">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Min. Cell Voltage
+                  </div>
+                </td>
+                <td>
+                  <div id="bms_min_cell_voltage">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Avg. Cell Temp.
+                  </div>
+                </td>
+                <td>
+                  <div id="bms_avg_cell_temp">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Max. Cell Temp.
+                  </div>
+                </td>
+                <td>
+                  <div id="bms_max_cell_temp">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Min. Cell Temp.
+                  </div>
+                </td>
+                <td>
+                  <div id="bms_min_cell_temp">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    CLS battery %
+                  </div>
+                </td>
+                <td>
+                  <div id="bms_cls_batt">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Electronics Battery %
+                  </div>
+                </td>
+                <td>
+                  <div id="bms_electronics_batt">
+
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="tables_group_2">
+            <table>
+              <tr class="headerRow">
+                <td>
+                  <div>
+                    Propulsion
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Property
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    Value
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Status
+                  </div>
+                </td>
+                <td>
+                  <div id="prop_status">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Voltage
+                  </div>
+                </td>
+                <td>
+                  <div id="prop_voltage">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Current
+                  </div>
+                </td>
+                <td>
+                  <div id="prop_current">
+
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <table>
+              <tr class="headerRow">
+                <td>
+                  <div>
+                    Contactless Stability
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Property
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    Value
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Distance 1
+                  </div>
+                </td>
+                <td>
+                  <div id="cls_dist1">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Distance 2
+                  </div>
+                </td>
+                <td>
+                  <div id="cls_dist2">
+
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <table>
+              <tr class="headerRow">
+                <td>
+                  <div>
+                    Braking
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Property
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    Value
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Pressure 1
+                  </div>
+                </td>
+                <td>
+                  <div id="braking_1">
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    Pressure 2
+                  </div>
+                </td>
+                <td>
+                  <div id="braking_2">
+
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="tables_group_3">
+          <table>
+            <tr>
+              <td class="headerRow">
+                <div>
+                  Temp1
+                </div>
+              </td>
+              <td id="temp1">
+
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td class="headerRow">
+                <div>
+                  Temp2
+                </div>
+              </td>
+              <td id="temp2">
+
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td class="headerRow">
+                <div>
+                  Temp3
+                </div>
+              </td>
+              <td id="temp3">
+
+              </td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+      <div class="baseContainerProgress">
+        <!--main boundary-->
+        <div class="base" data-depth="0.00">
+
+          <!--Top right heading inside base div-->
+          <div class="topRightHeading" data-depth="1.00">
+            Meters
+          </div>
+
+
+          <!--circular progress bar-1-->
+          <div class="prog-1">
+            <div class="c100 p11 small">
+              <span>-1 m/s^2</span>
+              <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+              </div>
+            </div>
+          </div>
+          <!--circular progress bar-1-->
+          <div class="prog-2">
+            <div class="c100 p25 small">
+              <span>25 m/s</span>
+              <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+              </div>
+            </div>
+          </div>
+          <!--circular progress bar-1-->
+          <div class="prog-3">
+            <div class="c100 p100 large">
+              <span>100 m</span>
+              <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="controlSection">
+      <div class="threadSelector">
+        <button class="dropbtn" type="button">LIM OFF</button>
+        <div class="content">
+          <div class="buttongrp">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="bms_snackbar"></div>
+</body>
+
+<script src="../bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../bootstrap/jquery.min.js"></script>
+<script src="./render.js"></script>
+<script src="./getValues.js"></script>
+
+</html>

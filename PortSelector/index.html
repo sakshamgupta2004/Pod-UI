@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="./portSelector.css" rel="stylesheet">
+  </link>
+  <link href="../css/snackbar.css" rel="stylesheet">
+  </link>
+  <title>Port Selection</title>
+</head>
+
+<body>
+  <div class="main">
+    <form>
+      <div class="threadSelector">
+        <button class="dropbtn" type="button"></button>
+        <div class="content">
+          <div class="buttongrp">
+          </div>
+        </div>
+      </div>
+      <div class="threadSelector">
+        <button class="dropbtn" type="button"></button>
+        <div class="content">
+          <div class="buttongrp">
+          </div>
+        </div>
+      </div>
+
+      <div class="threadSelector">
+        <button class="dropbtn" type="button">></button>
+      </div>
+    </form>
+
+    <form>
+
+      <div class="threadSelector">
+        <button class="dropbtn" type="button">AutoConnct &#128279;</button>
+      </div>
+    </form>
+  </div>
+  <div id="snackbar"></div>
+</body>
+<script src="./render.js">
+
+</script>
+<script>
+  document.querySelectorAll(".dropbtn")[2].addEventListener('click', (e) => {
+    if (!selectedPort) {
+      let x = document.getElementById("snackbar");
+      x.className = "show";
+      x.innerText = "No port selected"
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
+    }
+    else {
+
+      const port = new SerialPort({ path: selectedPort, baudRate: selectedBaud }, function (err) {
+        if (err) {
+          let x = document.getElementById("snackbar");
+          x.className = "show";
+          x.innerText = "Failed to open port"
+          setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
+        }
+        else {
+          port.close()
+          window.location.href = "../MainWindow/mainpage.html?port=" + selectedPort + "&baud=" + selectedBaud
+        }
+      })
+    }
+  });
+  document.querySelectorAll(".dropbtn")[3].addEventListener('click', (e) => {
+
+    let x = document.getElementById("snackbar");
+    x.className = "show";
+    x.innerText = "Trying to AutoConnect"
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
+    getPortsList((e, portsList) => {
+      for (let i = 0; i < portsList.length; i++) {
+
+        let stringData = ''
+        let displayData = ''
+        let j = i
+        const port = new SerialPort({ path: portsList[i], baudRate: 115200 }, function (err) {
+          if (err) {
+          }
+          else {
+
+            setTimeout((e) => {
+              try {
+                
+              port.close();
+              } catch (error) {
+                
+              }
+            }, 2000);
+
+            port.on('readable', function () {
+              stringData += port.read().toString()
+              displayData = null;
+              if (stringData.endsWith('\n')) {
+                if (stringData.startsWith('START:')) {
+                  stringData = stringData.substring(6)
+                }
+                else {
+                  stringData = ''
+                }
+                displayData = stringData.split(',')
+                if (displayData.length > 0) {
+                  port.close()
+                  window.location.href = "../MainWindow/mainpage.html?port=" + portsList[j] + "&baud=" + 960
+                }
+                stringData = ''
+              }
+            })
+          }
+        })
+
+
+      }
+    });
+
+  });
+</script>
+
+</html>

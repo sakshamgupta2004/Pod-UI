@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+}
+
+body {
+    background:radial-gradient(rgb(28, 11, 51) 10%, rgb(11, 2, 24) 45%);
+}
+
+.main {
+    overflow: auto;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content:left;
+    padding: 0 0;
+}
+.banner {
+    height: 40px;
+    width: 100%;
+    background: #000033;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    vertical-align: middle;
+}
+.banner .organisation {
+    color: aliceblue;
+    padding-left: 10px;
+}
+.banner .logo {
+    margin-left: 10px;
+    background-image: url('./logo.jpeg');
+    background-size:100% 100%;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.viewSection {
+    
+    min-width: 950px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-content:stretch;
+}
+
+.all_tables {
+    min-width: 650px;
+    width: 70vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items:stretch;
+    justify-content:stretch;
+}
+.tables_group_1_2_container {
+    overflow: hidden;
+    
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items:end;
+    justify-content:end;
+    padding: 0 0;
+
+}
+
+.tables_group_1 {
+    overflow: auto;
+    width: 50%;
+    height:100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    padding: 10px 20px;
+}
+.tables_group_2 {
+    overflow: auto;
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    padding: 10px 0px;
+}
+
+.tables_group_1 table {
+    margin: 5px 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:first baseline;
+    align-items:stretch;
+}
+.tables_group_1 table tr {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.tables_group_2 table {
+    margin: 5px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+}
+.tables_group_2 table tr {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.tables_group_3 {
+    overflow: hidden;
+    height: fit-content;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-content:stretch;
+    padding: 0px 0px 0px 20px;
+
+}
+.tables_group_3 table {
+    width: 100%;
+    display: table;
+}
+.tables_group_3 table tr {
+    display: table-row;
+    width: 100%;
+}
+.tables_group_3 table tr td {
+    color: aliceblue;
+
+}
+
+
+
+
+
+table {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid white;
+}
+
+table .headerRow {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: midnightblue;
+}
+
+table .headerRow td {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: midnightblue;
+}
+
+table tr td {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+
+table tr td div {
+    color: aliceblue;
+}
+
+
+
+
+
+/* 
+@media (prefers-color-scheme: light) {
+    body {
+        background-image: linear-gradient(to right, #BCBCBC 0%, white 100%);
+    }
+
+
+    .banner {
+        height: 40px;
+        width: 100%;
+        background: #8888ff;
+        display: flex;
+        align-items: flex-start;
+        justify-content: left;
+        padding: 10px;
+    }
+    .banner .organisation {
+        color: black;
+        padding-left: 10px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    table tr td div {
+        color: black;
+    }
+    
+.tables_group_3 table tr td {
+    color: black;
+
+}
+
+    table .headerRow {
+        background-color: #aaaaff;
+    }
+    table .headerRow td {
+        background-color: #aaaaff;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 0px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #eee;
+    }
+} */
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
