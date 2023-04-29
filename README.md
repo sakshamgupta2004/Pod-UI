@@ -13,5 +13,7 @@ To try:-
 
 
 Connection Porotocol:- UART
+
 Receiving DataFormat:- "START:{CSV data here}\n"
+
 Autoconnect:- When autoconnect is pressed, the software tries to search for the Dataformat on all ports available at a baudrate of 115200.
