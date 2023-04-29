@@ -30,7 +30,7 @@ const createWindow = () => {
   
 
 // var i = 0;
-//   let p = new SerialPort({ path: 'COM2', baudRate: 9600 }, function (err) {
+//   let p = new SerialPort({ path: 'COM2', baudRate: 115200 }, function (err) {
 //     if (!err) {
 
 //         setInterval(()=>{
@@ -42,7 +42,7 @@ const createWindow = () => {
 
 //             })
 //             i+=10;
-//         }, 500);
+//         }, 30);
        
 //     }
 //   })

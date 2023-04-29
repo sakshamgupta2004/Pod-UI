@@ -1,3 +1,4 @@
+var percentage = 0;
 const displayValues = (displayData) => {
     document.getElementById('bms_voltage').innerText = displayData[0];
     document.getElementById('bms_current').innerText = displayData[1];
@@ -27,4 +28,28 @@ const displayValues = (displayData) => {
     document.getElementById('temp1').innerText = displayData[17];
     document.getElementById('temp2').innerText = displayData[18];
     document.getElementById('temp3').innerText = displayData[19];
+
+    percentage+=1;
+    percentage%=99;
+    let prog1 = document.getElementById('accel_progress');
+    prog1.classList.forEach((val, i, parent) => {
+        if (val.startsWith('p')) {
+            prog1.classList.replace(val, 'p' + percentage)
+        }
+    });
+    prog1.children.item(0).innerText = percentage + 'm/s2'
+    let prog2 = document.getElementById('speed_progress');
+    prog2.classList.forEach((val, i, parent) => {
+        if (val.startsWith('p')) {
+            prog2.classList.replace(val, 'p' + percentage)
+        }
+    });
+    prog2.children.item(0).innerText = percentage + 'm/s'
+    let prog3 = document.getElementById('distance_progress');
+    prog3.classList.forEach((val, i, parent) => {
+        if (val.startsWith('p')) {
+            prog3.classList.replace(val, 'p' + percentage)
+        }
+    });
+    prog3.children.item(0).innerText = percentage + 'm'
 };
